@@ -2,15 +2,74 @@
 <html>
   <head>
     <title>Are Jackson and Suman Going to TOLO?</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
+
     <style>
+
+      html, body {
+        height:100%;
+      }
+
       h1 {
         font-size:20vw;
         text-align:center;
-        line-height:100%;
+        margin-top:1rem;
+      }
+
+      .pretty {
+        font-family:'Open Sans', 'Helvetica', sans-serif;
+        color:#333;
+
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row /* works with row or column */
+        flex-direction: row;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+       }
+
+      .pretty h1 {
+        margin:0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top:-2rem;
+      }
+
+      button {
+        position:fixed;
+        bottom:1rem;
+        right:1rem;
+        background-color:transparent;
+        border:1px solid #333;
+        outline:0;
+      }
+
+      button:hover {
+        cursor:pointer;
+      }
+
+      .pretty button {
+        background-color:#333;
+        color:#fff;
       }
     </style>
   </head>
   <body>
     <h1 style="text-transform:uppercase;">Yes</h1>
+    <button>Pretty</button>
+
+    <script>
+      window.onload = function(e) {
+        var button = document.querySelectorAll('button')[0];
+        button.addEventListener('click', function(e) {
+          document.querySelectorAll('body')[0].classList.toggle('pretty');
+        });
+      }
+    </script>
   </body>
 </html>
